@@ -13,7 +13,7 @@ LLMConsole utilizes-
 * duckduckgo_search
 * openai  
 
-HERE, WE FIRE UP XONSH WHICH FIRES UP LLMCONSOLE (IN .XONSHRC):
+HERE, WE FIRE UP XONSH, WHICH FIRES UP LLMCONSOLE (defined in .xonshrc):
 
 Hotkey listing
 
