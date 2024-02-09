@@ -23,7 +23,6 @@ from duckduckgo_search import DDGS
 import yagooglesearch
 from openai import OpenAI
 import os
-from hybrid_shell.hs import ANSI
 from autogen import AssistantAgent, UserProxyAgent, config_list_from_json
 
 
