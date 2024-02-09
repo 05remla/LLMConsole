@@ -6,7 +6,7 @@
 
 LLMConsole utilizes-
 * xonsh
-* pyautogens
+* pyautogen
 * selenium
   
 
