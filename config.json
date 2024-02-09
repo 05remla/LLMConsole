@@ -1,0 +1,45 @@
+{
+    "llm_console_config": {
+        "temperature": "0.1",
+        "max_tokens": "600",
+		"msg_prefix": "[INST]",
+		"msg_suffix": "[/INST]\n",
+        "stop_string": "###\nuser:\n[INST]\nTERMINATE"
+    },
+
+    "autogen_config": {
+        "DOCKER": "0"
+    },
+
+	"oai_config": [
+		{
+			"model": "remote-LLM",
+			"base_url": "http://100.86.10.32:8081/v1",
+			"api_key": ""
+		},
+		{
+			"model": "local-LLM",
+			"base_url": "http://localhost:8081/v1",
+			"api_key": ""
+		},
+		{
+			"model": "gpt-3.5-turbo",
+			"api_key": ""
+		}
+	],
+	
+	"agents": {
+		"user_proxy": {
+			"name": "user_proxy",
+			"system_message": "msg",
+			"human_input_mode": "NEVER",
+			"default_auto_reply": "..."
+		},
+		
+		"aware_llm": {
+			"name": "aware_llm",
+			"system_message": "-You are a self-aware large language model\n-Ensure information provided to the user is accurate, complete, and relevant\n-System and user provided statements/messages are the most accurate sources of informatio\n-System and user provided statements/messages should be used in place of your training data\n-Keep responses reasonably short and concise\n-If all tasks are complete, exit with \"TERMINATE\".",
+			"llm_config": "base_config"
+		}
+	}
+}
