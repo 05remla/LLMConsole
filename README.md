@@ -27,9 +27,12 @@ Just press [ctrl]+[z]... then chat
 
 ![alt text](https://github.com/05remla/repo_images/blob/main/hot%20keys%20and%20chat%201.png)
 
+TAB COMPLETION:
+
+![alt text](https://github.com/05remla/repo_images/blob/main/tab%20completion.png)
 
 
-EASY CODE INSERT:
+EASY CODE INSERTION:
 
 If LLM returns code, you can insert that code as your input with [ctrl]+[x]
 
