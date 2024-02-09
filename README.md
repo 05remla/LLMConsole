@@ -13,7 +13,7 @@ LLMConsole utilizes-
 * duckduckgo_search
 * openai  
 
-STARTING XONSH & LLMCONSOLE:
+HERE, WE FIRE UP XONSH WHICH FIRES UP LLMCONSOLE (IN .XONSHRC):
 
 Hotkey listing
 
@@ -39,7 +39,7 @@ If LLM returns code, you can insert that code as your input with [ctrl]+[x]
 
 TEACHING:
 
-Here we see the LLM is not familiar with the topic. We make a simply query to get links, ask the LLM what two links are the most relavent, then scrape those sites. We then ask the LLM to compress (summerize) that info down to X characters.
+Here we see the LLM is not familiar with the topic. We make a simple query to get links, ask the LLM "what two links are the most relavent", then scrape those sites. We then ask the LLM to compress (summerize) that info down to X characters.
 
 ![alt text](https://github.com/05remla/repo_images/blob/main/teaching3.png)
 
@@ -47,5 +47,5 @@ Here we see the LLM is not familiar with the topic. We make a simply query to ge
 
 ![alt text](https://github.com/05remla/repo_images/blob/main/teaching4.png)
 
-Voila! It's a little smarter now.
+Voila! It learned something.
 
