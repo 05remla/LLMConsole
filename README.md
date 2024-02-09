@@ -23,5 +23,7 @@ if LLM returns code, you can insert that code as your input with [ctrl]+[x]
 ![alt text](https://github.com/05remla/repo_images/blob/main/hot%20keys%20(cody%20insert).png)
 
 TEACHING:
-Here we know the LLM is not familiar with the 4090's specs. We make a simply query to get links, ask the LLM what two links are the most relavent, then scrape those sites. We then ask the LLM to compress (summerize) that info down to X characters. Voila! The LLM is now educated on RTX 4090 specs.
-![alt text](https://github.com/05remla/repo_images/blob/main/teaching.png)
+Here we see the LLM is not familiar with the topic. We make a simply query to get links, ask the LLM what two links are the most relavent, then scrape those sites. We then ask the LLM to compress (summerize) that info down to X characters.
+![alt text](https://github.com/05remla/repo_images/blob/main/teaching3.png)
+![alt text](https://github.com/05remla/repo_images/blob/main/teaching2.png)
+Voila! It's a little smarter now.
