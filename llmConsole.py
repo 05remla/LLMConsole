@@ -1,29 +1,8 @@
 '''
-    [ ] agents and config to json
-    [ ] RAG for history
-    [ ] make to OOP (obj oriented prog)
-    [ ] formatting of this code: var lowercase; class fist letter capitolized etc...
-    [ ] xonsh prompt
-    [ ] chat class for a temp chat with differant context
+    [ ] RAG
     [ ] https://python.langchain.com/docs/use_cases/question_answering/local_retrieval_qa
-    [ ] xonsh tweaking so that if llm spit out function, automatically put it in users next console input
-        with prompt_toolkit.input.create_pipe_input() as input:
-            input.send_text('inputdata')   
-        1.
-            r, w = os.pipe()
-            stdin_ = open(w, 'w')
-            stdin_.write(SOMETHING)
-        2.
-            sys.stdin = StringIO.StringIO('asdlkj')
-        3.
-            string = 'leo andrew remick'
-            file = StringIO(string)
-            file.read()
-            file.write()
-            file.seek()
-            
-        xonsh, prompt toolkit 
     [ ] browser.obj nuke option (pid kill)
+    [X] xonsh tweaking so that if llm spit out function, automatically put it in users next console input
     [X] xonsh alias/function to chat with llm
 '''
 from selenium import webdriver
