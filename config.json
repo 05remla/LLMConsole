@@ -2,8 +2,8 @@
     "llm_console_config": {
         "temperature": "0.1",
         "max_tokens": "600",
-		"msg_prefix": "[INST]",
-		"msg_suffix": "[/INST]\n",
+	"msg_prefix": "[INST]",
+	"msg_suffix": "[/INST]\n",
         "stop_string": "###\nuser:\n[INST]\nTERMINATE"
     },
 
