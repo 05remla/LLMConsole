@@ -11,16 +11,13 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from os import path as osPath
 from time import localtime
 from time import sleep
-# import prompt_toolkit
 import sys
 import atexit
 import json
 from urllib.parse import urlparse
 from duckduckgo_search import DDGS
-import yagooglesearch
 from openai import OpenAI
 import os
 from autogen import AssistantAgent, UserProxyAgent, config_list_from_json
@@ -46,7 +43,7 @@ class ANSI():
         codes = {'reset':'0;0','bold':1,'dim':2,
                  'italic':3, 'underline':4}
  
-    def init():
+    def __init__(self):
         for i in ANSI.FG.codes.keys():
             ANSI.CODE['FG_{}'.format(i)] = '\33[{}m'.format(ANSI.FG.codes[i])
         for i in ANSI.BG.codes.keys():
@@ -72,7 +69,7 @@ class ANSI():
                 
         return(''.join(array))    
 
-ANSI.init()
+ANSI()
 
 
 class connect_manager:
@@ -194,7 +191,6 @@ class llm:
         ''''''
         history = []
         history_checkpoint = []
-        get_code_flipper = 0
 
         def __init__(self):
             pass

@@ -5,8 +5,6 @@ from prompt_toolkit.keys import Keys
 from prompt_toolkit.filters import Condition, EmacsInsertMode, ViInsertMode
 import os
 import sys
-import autogen
-from llmConsole import *
 
 if getattr(sys, 'frozen', False):
     $HOME = os.path.dirname(sys.executable)
@@ -16,18 +14,27 @@ else:
 cd $HOME
 
         
-# **Completion crash workaround**
+# **Workarounds**
 #==========================================================
 #completer remove skip
 if (sys.platform == 'win32'):
     completer remove bash
 
+# import asyncio
+# import selectors
+# 
+# selector = selectors.SelectSelector()
+# loop = asyncio.SelectorEventLoop(selector)
+# asyncio.set_event_loop(loop)
+
 
 # **Environment**
 #==========================================================
 sep = os.path.sep
+sys.path.append('{}{}{}{}{}'.format($HOME,sep,'_internal',sep,'py_bin'))
+
 xonsh.xonfig.WELCOME_MSG = []
-$XONSHRC_DIR             = [$HOME, '{}{}rc'.format($HOME,sep)]
+#$XONSHRC_DIR             = [$HOME, '{}{}rc'.format($HOME,sep)]
 $XONSH_CONFIG_DIR        = '{}{}config'.format($HOME,sep)
 $USERPROFILE             = $HOME
 $XONSH_DATA_DIR          = '{}{}data'.format($HOME,sep)
@@ -35,8 +42,8 @@ $XONSH_TRACEBACK_LOGFILE = '{}{}traceback.log'.format($XONSH_DATA_DIR,sep)
 
 $AUTO_SUGGEST_IN_COMPLETIONS  = True
 $XONSH_SHOW_TRACEBACK         = False
-$XONSH_STORE_STDOUT           = False
-$XONSH_STORE_STDIN            = True
+$XONSH_storage_STDOUT         = False
+$XONSH_storage_STDIN          = True
 $XONSH_HISTORY_MATCH_ANYWHERE = False
 $COMPLETIONS_CONFIRM          = False
 $XONSH_AUTOPAIR               = True
@@ -48,18 +55,18 @@ $COMPLETIONS_MENU_ROWS        = 12
 
 # **LLM Console Initialization**
 #==========================================================
+from llmConsole import *
 LLM = llm()
 
 #LLM.agents.create()
 LLM.agents.create(**LLM.config.agent_tmplts['aware_llm'])
 LLM.update_agent()
 
-class store:
-    # place llm initialized variable here to enable quick-chat with [ctrl]+[z]
+class storage:
+    # place llmConsole initialized object here to enable quick-chat with [ctrl]+[z]
     llm_inst = LLM
     code_ticker = 0
     code = []
-    context_tracer = LLM.history.size()
     
     
 # **Magics**
@@ -67,8 +74,8 @@ class store:
 def _up(args):
     if not args or len(args) < 1:
         args = [1]  # if args is None you can't index to it
-    balloons = ('../' * int(args[0]))
-    cd @(balloons)
+    amnt = ('../' * int(args[0]))
+    cd @(amnt)
 
 def get_code():
     if LLM.history.change_tracker == 0:
@@ -88,12 +95,12 @@ def get_code():
         if code_arr[0].lower() == 'python':
             x = code_arr.pop(0)
         ret.append('\n'.join(code_arr))
-    store.code = ret
+    storage.code = ret
 
 @xonsh.tools.unthreadable
 def chat_shortcut(args):
     text = ' '.join(args)
-    llm.chat(store.llm_inst, text)
+    llm.chat(storage.llm_inst, text)
 aliases['chat'] = chat_shortcut
 
 @events.on_ptk_create
@@ -109,34 +116,31 @@ def custom_keybindings(bindings, **kw):
         print()
         event.cli.renderer.erase()
 
-    # def llmChat(event):
-    #     event.current_buffer.insert_text('chat! ')
-
     @bindings.add('c-z')
     def llmChat(event):
         event.current_buffer.insert_text('chat! ')
 
     @bindings.add('c-x')
     def enterCode(event):
-        # store.buffer = event.current_buffer
+        # storage.buffer = event.current_buffer
         x = event.current_buffer.delete_before_cursor(600)
         get_code()
-        if len(store.code) == 0:
+        if len(storage.code) == 0:
             return
 
         try:
-            code = store.code[store.code_ticker]
-            store.code_ticker += 1
+            code = storage.code[storage.code_ticker]
+            storage.code_ticker += 1
         except:
-            store.code_ticker = 0
-            code = store.code[store.code_ticker]
-            store.code_ticker += 1
+            storage.code_ticker = 0
+            code = storage.code[storage.code_ticker]
+            storage.code_ticker += 1
 
         event.cli.renderer.erase()
         event.current_buffer.insert_text(code)
 
 
-# **Aliases and conflict removal**
+# **Aliases**
 #==========================================================
 aliases['la'] = ['ls', '-a', '--color']
 aliases['ll'] = ['ls', '-la', '--color']
