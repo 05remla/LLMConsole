@@ -1,3 +1,4 @@
+# python 3.11.6
 chromadb==0.4.22
 duckduckgo_search==4.4
 openai==1.10.0
