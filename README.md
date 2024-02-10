@@ -62,7 +62,7 @@ Edit the config.json file.
 * If you're using LLMConsole: keep the DOCKER variable 0
 * Tweak other params to your heart's desire
   
-![alt text](https://github.com/05remla/repo_images/blob/main/config.png)
+![alt text](https://github.com/05remla/repo_images/blob/main/config2.png)
 
 If you're using LLMConsole with your python installation open a terminal and run:
 * python -m pip install -r requirements.txt
