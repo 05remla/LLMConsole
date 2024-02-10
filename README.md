@@ -44,7 +44,11 @@ If LLM returns code, you can insert that code as your input with [ctrl]+[x]
 
 TEACHING:
 
-Here we see the LLM is not familiar with the topic. We make a simple query to get links, ask the LLM "what two links are the most relavent", then scrape those sites. We then ask the LLM to compress (summerize) that info down to X characters.
+Here we see the LLM can't answer questions (accurately) about the RTX 4090. So we run llm.teach. This...
+* Make a query to get links
+* Asks the LLM "what X links are the most relavent"
+* Scrapes those links
+* Then asks the LLM to compress (summerize) that info down to Y characters.
 
 ![alt text](https://github.com/05remla/repo_images/blob/main/teaching3.png)
 
