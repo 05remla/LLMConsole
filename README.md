@@ -45,7 +45,7 @@ If LLM returns code, you can insert that code as your input with [ctrl]+[x]
 TEACHING:
 
 Here we see the LLM can't answer questions (accurately) about the RTX 4090. So we run llm.teach. This...
-* Make a query to get links
+* Makes a query to get links
 * Asks the LLM "what X links are the most relavent"
 * Scrapes those links
 * Then asks the LLM to compress (summerize) that info down to Y characters.
