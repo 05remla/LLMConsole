@@ -46,9 +46,26 @@ Here we see the LLM is not familiar with the topic. We make a simple query to ge
 
 ![alt text](https://github.com/05remla/repo_images/blob/main/teaching3.png)
 
-
-
 ![alt text](https://github.com/05remla/repo_images/blob/main/teaching4.png)
 
 Voila! It learned something.
+
+
+
+# GETTING STARTED
+
+Edit the config.json file. 
+* In the case of OpenAI and their GPTs, add your API key
+* If you're using an LLM elsewhere, add the URL (and API if you need it)
+* If you're using LLMConsole: keep the DOCKER variable 0
+* Tweak other params to your heart's desire
+  
+![alt text](https://github.com/05remla/repo_images/blob/main/config.png)
+
+If you're using LLMConsole with your python installation open a terminal and run:
+* python -m pip install -r requirements.txt
+* Then put llmConsole.py in your python/system path
+
+If you're using the release:
+* Double-click LLMConsole.exe
 
