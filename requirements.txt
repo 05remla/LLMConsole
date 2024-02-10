@@ -1,0 +1,8 @@
+chromadb==0.4.22
+duckduckgo_search==4.4
+openai==1.10.0
+pyautogen==0.2.9
+pyreadline3==3.4.1
+selenium==4.17.2
+virtualenv
+xonsh[full]==0.14.4
