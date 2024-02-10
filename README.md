@@ -1,5 +1,6 @@
 # LLMConsole
 
+*Tested/built with python 3.11.6*
 *Intuitive framework to combine the utility of the console/terminal with the power of large language models*
 
 # ![Pre-Release 0.0.1](https://github.com/05remla/LLMConsole/releases/tag/PR-0.0.1)
