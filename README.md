@@ -63,7 +63,7 @@ Voila! It learned something.
 Edit the config.json file. 
 * In the case of OpenAI and their GPTs, add your API key
 * If you're using an LLM elsewhere, add the URL (and API if you need it)
-* If you're using LLMConsole: keep the DOCKER variable 0
+* If you're using LLMConsole pre-built binary: keep the DOCKER variable 0
 * Tweak other params to your heart's desire
   
 ![alt text](https://github.com/05remla/repo_images/blob/main/config2.png)
