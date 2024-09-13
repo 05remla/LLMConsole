@@ -1,4 +1,5 @@
 '''
+    Version: 0.0.3
     [ ] RAG
     [ ] https://python.langchain.com/docs/use_cases/question_answering/local_retrieval_qa
     [ ] browser.obj nuke option (pid kill)
